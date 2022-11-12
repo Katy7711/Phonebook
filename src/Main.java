@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -22,31 +24,90 @@ public class Main {
         Person person19 = new Person("Иванов Иван", "89546787654");
         Person person20 = new Person("Иванов Иван", "89546787654");
 
+        Phonebook phonebook = new Phonebook();
 
 
-        Phonebook.putPhonebook("Иванов Иван", "89546787654");
-        Phonebook.putPhonebook("Иванова Анна", "89546445754");
-        Phonebook.putPhonebook("Петров Сергей", "89546753654");
-        Phonebook.putPhonebook("Петрова Ольга", "89546787678");
-        Phonebook.putPhonebook("Кошкин Андрей", "85676787654");
-        Phonebook.putPhonebook("Кошкина Лилия", "89546785684");
-        Phonebook.putPhonebook("Волков Дмитрий", "89523347654");
-        Phonebook.putPhonebook("Волкова Наталья", "89546677854");
-        Phonebook.putPhonebook("Хомячков Алексей", "89546269554");
-        Phonebook.putPhonebook("Котов Максим", "895462788954");
-        Phonebook.putPhonebook("Котова Ирина", "895462568565");
-        Phonebook.putPhonebook("Медведев Игорь", "89546345674");
-        Phonebook.putPhonebook("Медведева Татьяна", "89546787324");
-        Phonebook.putPhonebook("Рыбина Светлана", "895424567654");
+        phonebook.putPersonNumber(person1);
+        phonebook.putPersonNumber(person2);
+        phonebook.putPersonNumber(person3);
+        phonebook.putPersonNumber(person4);
+        phonebook.putPersonNumber(person5);
+        phonebook.putPersonNumber(person6);
+        phonebook.putPersonNumber(person7);
+        phonebook.putPersonNumber(person8);
+        phonebook.putPersonNumber(person9);
+        phonebook.putPersonNumber(person10);
+        phonebook.putPersonNumber(person11);
+        phonebook.putPersonNumber(person12);
+        phonebook.putPersonNumber(person13);
+        phonebook.putPersonNumber(person14);
 
-        System.out.println(phonebook.get("Иванов Иван"));
-
-
+        System.out.println(phonebook);
 
 
+//        Задание 1.3:
+        HashMap<String, Integer> arbitraryNumbers = new HashMap<>();
+        arbitraryNumbers.put("Строка1", 1);
+        arbitraryNumbers.put("Строка2", 2);
+        arbitraryNumbers.put("Строка3", 3);
+        arbitraryNumbers.put("Строка4", 4);
+        arbitraryNumbers.put("Строка5", 5);
+        arbitraryNumbers.put("Строка6", 6);
+        System.out.println(arbitraryNumbers);
 
+//        Задание 2.1
+
+        Map<String, List<Integer>> collection = new HashMap<>();
+        Random random = new Random();
+        List<Integer> integers = Collections.singletonList(random.nextInt(100_000));
+        collection.put("стр1", integers);
+        StringBuilder builder = new StringBuilder();
+        builder.append(collection.keySet()).append("--->").append(integers).append(integers).append(integers);
+        builder.append("\n");
+        System.out.println(builder.toString());
+
+
+
+//        Задание 2.2
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "строка1");
+        map.put(2, "строка2");
+        map.put(3, "строка3");
+        map.put(4, "строка4");
+        map.put(5, "строка5");
+        map.put(6, "строка6");
+        map.put(7, "строка7");
+        map.put(8, "строка8");
+        map.put(9, "строка9");
+        map.put(10, "строка10");
+        System.out.println(map);
 
 
 
     }
-}
+    }
+
+
+
+//    метод к заданию 1.3
+//    public static void addToCollection(Map<String, Integer> arbitraryNumbers) {
+//        for (Map.Entry<String, Integer> numbers: arbitraryNumbers.entrySet())
+//            if (arbitraryNumbers
+//            throw new NumberAlreadyExistsException("Такой номер с таким значением уже существует");
+
+
+//как тут сделать условие: Если такого ключа нет, то просто добавляет данные в коллекцию.
+//Если такой ключ уже есть и значения совпадают, то необходимо бросить исключение.
+//Если такой ключ уже есть, но значения разные, то обновите целое число в коллекции.
+
+
+
+
+
+
+
+
+
+
+
+

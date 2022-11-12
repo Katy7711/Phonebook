@@ -1,25 +1,26 @@
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Phonebook {
 
-    private String name;
-    private final String number;
-
-
     private static final Map<String, String> phonebook = new HashMap<>();
 
-    public Phonebook(String name, String number) {
-        this.name = name;
-        this.number = number;
-    }
-
-    public void putPhonebook(HashMap phonebook) {
-        this.name = phonebook.getOrDefault(this, new String());
+    public void putPersonNumber(Person person) {
+        phonebook.put(person.getName(), person.getNumber());
 
     }
+
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Телефонный справочник:").append('\n');
+        stringBuilder.append(phonebook).append('\n');
+        return stringBuilder.toString();
+    } // подскажите как сделать правильно в StringBuilder чтобы каждое значение было с новой строки?
+
 }
+
 
 
 
