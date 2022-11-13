@@ -58,33 +58,40 @@ public class Main {
 //        Задание 2.1
 
         Map<String, List<Integer>> collection = new HashMap<>();
-        Random random = new Random();
-        List<Integer> integers = Collections.singletonList(random.nextInt(100_000));
-        collection.put("стр1", integers);
-        StringBuilder builder = new StringBuilder();
-        builder.append(collection.keySet()).append("--->").append(integers).append(integers).append(integers);
-        builder.append("\n");
-        System.out.println(builder.toString());
-
+        int i;
+        for (i = 0; i < 5; i++) {
+            Random random = new Random();
+            i = random.nextInt(100000);
+            List<Integer> integers = new ArrayList<>();
+            integers.add(i);
+            integers.add(i);
+            integers.add(i);
+            collection.put("стр1", integers);
+            collection.put("стр2", integers);
+            collection.put("стр3", integers);
+            collection.put("стр4", integers);
+            collection.put("стр5", integers);
+            StringBuilder builder = new StringBuilder();
+            builder.append(collection.entrySet());
+            System.out.println(builder.toString()); }
 
 
 //        Задание 2.2
-        Map<Integer, String> map = new HashMap<>();
-        map.put(1, "строка1");
-        map.put(2, "строка2");
-        map.put(3, "строка3");
-        map.put(4, "строка4");
-        map.put(5, "строка5");
-        map.put(6, "строка6");
-        map.put(7, "строка7");
-        map.put(8, "строка8");
-        map.put(9, "строка9");
-        map.put(10, "строка10");
-        System.out.println(map);
+            Map<Integer, String> map = new HashMap<>();
+            map.put(1, "строка1");
+            map.put(2, "строка2");
+            map.put(3, "строка3");
+            map.put(4, "строка4");
+            map.put(5, "строка5");
+            map.put(6, "строка6");
+            map.put(7, "строка7");
+            map.put(8, "строка8");
+            map.put(9, "строка9");
+            map.put(10, "строка10");
+            System.out.println(map);
 
 
-
-    }
+        }
     }
 
 
