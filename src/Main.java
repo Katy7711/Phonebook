@@ -57,42 +57,56 @@ public class Main {
 
 //        Задание 2.1
 
-        Map<String, List<Integer>> collection = new HashMap<>();
-        int i;
-        for (i = 0; i < 5; i++) {
-            Random random = new Random();
-            i = random.nextInt(100000);
-            List<Integer> integers = new ArrayList<>();
-            integers.add(i);
-            integers.add(i);
-            integers.add(i);
-            collection.put("стр1", integers);
-            collection.put("стр2", integers);
-            collection.put("стр3", integers);
-            collection.put("стр4", integers);
-            collection.put("стр5", integers);
-            StringBuilder builder = new StringBuilder();
-            builder.append(collection.entrySet());
-            System.out.println(builder.toString()); }
-
-
-//        Задание 2.2
-            Map<Integer, String> map = new HashMap<>();
-            map.put(1, "строка1");
-            map.put(2, "строка2");
-            map.put(3, "строка3");
-            map.put(4, "строка4");
-            map.put(5, "строка5");
-            map.put(6, "строка6");
-            map.put(7, "строка7");
-            map.put(8, "строка8");
-            map.put(9, "строка9");
-            map.put(10, "строка10");
-            System.out.println(map);
-
-
+        Map<String, List<Integer>> map = createMap();
+        for (Map.Entry<String, List<Integer>> entry : map.entrySet()) {
+            int sum = 1;
+            for (Integer i : entry.getValue()) {
+                sum += i;
+            }
+            System.out.println(entry.getKey() + " = " + entry.getValue());
+            System.out.println(entry.getKey() + " = " + sum);
         }
+        ;
     }
+
+    private static Map<String, List<Integer>> createMap() {
+        Map<String, List<Integer>> collection = new HashMap<>();
+        List<Integer> list = createList();
+        collection.put("стр1", list);
+        collection.put("стр2", list);
+        collection.put("стр3", list);
+        collection.put("стр4", list);
+        collection.put("стр5", list);
+        return collection;
+    }
+
+    private static List<Integer> createList() {
+        Random random = new Random();
+        List<Integer> integers = new ArrayList<>();
+        integers.add(random.nextInt(100000));
+        integers.add(random.nextInt(100000));
+        integers.add(random.nextInt(100000));
+        return integers;
+    }
+}
+
+////        Задание 2.2
+//            Map<Integer, String> map = new HashMap<>();
+//            map.put(1, "строка1");
+//            map.put(2, "строка2");
+//            map.put(3, "строка3");
+//            map.put(4, "строка4");
+//            map.put(5, "строка5");
+//            map.put(6, "строка6");
+//            map.put(7, "строка7");
+//            map.put(8, "строка8");
+//            map.put(9, "строка9");
+//            map.put(10, "строка10");
+//            System.out.println(map);
+//
+//
+//        }
+//
 
 
 
